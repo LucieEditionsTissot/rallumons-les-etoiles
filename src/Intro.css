@@ -217,6 +217,26 @@ canvas.stars-density-5 {
 .next-button:hover {
     background-color: #eee;
 }
+.milkyway-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150vw;
+    height: 150vh;
+    background: url('public/milkyway.jpg') center center no-repeat;
+    background-size: cover;
+    opacity: 0.15;
+    transform: rotate(25deg) scale(1.2);
+    z-index: 1;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    filter: blur(2px) brightness(1.2);
+    transition: opacity 1s ease;
+}
+
+.milkyway-hidden {
+    opacity: 0;
+}
 
 
 

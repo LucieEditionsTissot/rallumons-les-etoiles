@@ -37,6 +37,11 @@ export const Intro = ({ onNext }: { onNext: () => void }) => {
     }, [lightsOff, hasAllLightsOff]);
 
     const lightsOffCount = lightsOff.filter(Boolean).length;
+    const lightsOffRatio = lightsOffCount / lightCount;
+
+// ✨ Apparition progressive de la voie lactée
+    const milkywayOpacity = lightsOffRatio * 0.5; // Max 0.5
+
 
     const starCount = 1000 + lightsOffCount * 2500;
     const starFactor = 2 + lightsOffCount * 1.2;
@@ -48,7 +53,12 @@ export const Intro = ({ onNext }: { onNext: () => void }) => {
                     Suivant
                 </button>
             )}
-            <StarsCanvas count={starCount} factor={starFactor} />
+            <StarsCanvas
+                count={starCount}
+                factor={starFactor}
+                milkywayOpacity={milkywayOpacity}
+            />
+
 
             <div className={`city-layer dim-${lightsOffCount}`} />
 
