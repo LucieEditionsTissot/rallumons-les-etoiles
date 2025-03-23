@@ -1,0 +1,33 @@
+.shooting-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.shooting-star {
+    position: absolute;
+    width: 2px;
+    height: 160px;
+    background: linear-gradient(to top, white, transparent); /* corrige la direction */
+    opacity: 0.9;
+    transform-origin: top left;
+    animation: shoot 12s ease-out forwards;
+    filter: drop-shadow(0 0 6px white);
+    will-change: transform, opacity;
+}
+
+@keyframes shoot {
+    0% {
+        transform: translate(0, 0) rotate(-45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(800px, 800px) rotate(-45deg);
+        opacity: 0;
+    }
+}
